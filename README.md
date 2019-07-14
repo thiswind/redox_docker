@@ -81,3 +81,5 @@ make qemu_no_build
 （2）截止2017年7月14日，rustlang/rust的每日nightly镜像是基于Debian9（stretch）的，所以其实这个环境你也可以拿来当作一台Debian9的虚拟机来使用。
 
 （3）由于bootstrap每次都会下载一些东西，为了节省时间和流量，我把这些东西放到Dockerfile里了，这样就不用每次都重复下载了。但是这会造成工具不是最新的，所以每隔几天，都应该执行`./build.sh`脚本重新编译一下本地docker镜像。
+
+（4）在官方的脚本当中，用户态文件系统访问权限错误，会导致编译失败，所以修改了官方的`entripoint.sh`，把`chmod 666 /dev/fuse;`改为:`sudo chgrp redox /dev/fuse;`。参考：[https://gitlab.redox-os.org/redox-os/redox/merge_requests/1189](https://gitlab.redox-os.org/redox-os/redox/merge_requests/1189)
