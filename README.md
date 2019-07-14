@@ -68,3 +68,7 @@ make qemu_no_build
 就可以启动redox。
 
 第一次启动回问你是不是要保存一个什么，输入yes
+
+# 运行截图
+
+![](https://github.com/thiswind/redox_docker/raw/master/screenshot.png)
