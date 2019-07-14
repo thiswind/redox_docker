@@ -73,3 +73,11 @@ make qemu_no_build
 # 运行截图
 
 ![](https://github.com/thiswind/redox_docker/raw/master/screenshot.png)
+
+---------------------
+注：
+（1）docker编译时候`netsurf`，即网页浏览器会出错，所以我在构建脚本里把它去掉了。眼尖的你可能已经发现了，截图里的redox没有网页浏览器。参考：[https://gitlab.redox-os.org/redox-os/redox/issues/1197#note_11332](https://gitlab.redox-os.org/redox-os/redox/issues/1197#note_11332)
+
+（2）截止2017年7月14日，rustlang/rust的每日nightly镜像是基于Debian9（stretch）的，所以其实这个环境你也可以拿来当作一台Debian9的虚拟机来使用。
+
+（3）由于bootstrap每次都会下载一些东西，为了节省时间和流量，我把这些东西放到Dockerfile里了，这样就不用每次都重复下载了。但是这会造成工具不是最新的，所以每隔几天，都应该执行`./build.sh`脚本重新编译一下本地docker镜像。
