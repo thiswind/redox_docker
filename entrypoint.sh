@@ -53,7 +53,7 @@ if [ -f /dev/fuse ];
 #	then chmod 666 /dev/fuse; 
 	
 	# https://gitlab.redox-os.org/redox-os/redox/merge_requests/1189
-	sudo chgrp redox /dev/fuse
+	then sudo chgrp redox /dev/fuse;
 fi
 
 exec gosu $USER_NAME "$@"
