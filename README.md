@@ -62,6 +62,7 @@ brew install qemu
 然后在宿主机上执行：
 
 ```bash
+cd redox/
 make qemu_no_build
 ```
 
