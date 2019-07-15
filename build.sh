@@ -22,6 +22,6 @@ set -o nounset                              # Treat unset variables as an error
 docker build -t myredox:latest .
 
 # do some clean
-docker container prune
-docker image prune
+docker container prune -f
+docker image prune -f
 
